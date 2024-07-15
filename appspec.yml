@@ -1,4 +1,4 @@
-ersion: 0.0
+version: 0.0
 os: windows
 files:
   - source: /
@@ -10,3 +10,5 @@ hooks:
   AfterInstall:
     - location: scripts/after_install.bat
       timeout: 900
+    - location: scripts/configure_iis.ps1
+      timeout: 300

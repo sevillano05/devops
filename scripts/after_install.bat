@@ -1,2 +1,2 @@
-REM Reiniciar IIS
-iisreset
+@echo off
+echo Deployment completed successfully!

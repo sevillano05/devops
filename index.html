@@ -1,384 +1,126 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestión de Notas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        input, select, button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        button {
-            background: #5cb85c;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #4cae4c;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>MUSICA</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css'><link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <div id="authContainer">
-        <h1>Sistema de Gestión de Notas</h1>
-        <div id="loginContainer">
-            <h2>Inicio de Sesión</h2>
-            <form id="loginForm">
-                <input type="text" id="loginUsername" placeholder="Nombre de usuario" required>
-                <input type="password" id="loginPassword" placeholder="Contraseña" required>
-                <button type="submit">Iniciar Sesión</button>
-            </form>
+<!-- partial:index.partial.html -->
+<body>
+    <div class="album-cover">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="Images/image1.png" />
+            <div class="overlay">
+              <a
+                href="https://www.youtube.com/watch?v=rkMACKq7rkY"
+                target="_blank"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="Images/image2.png" />
+            <div class="overlay">
+              <a
+                href="https://youtu.be/vLXLaCY-3Ro?si=0KNvA2UYCK2vnbUb"
+                target="_blank"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="Images/image3.png" />
+            <div class="overlay">
+              <a
+                href="https://www.youtube.com/watch?v=P3cffdsEXXw"
+                target="_blank"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="Images/image4.png" />
+            <div class="overlay">
+              <a
+                href="https://www.youtube.com/watch?v=Q2ftMmazZCU"
+                target="_blank"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="Images/image5.png" />
+            <div class="overlay">
+              <a
+                href="https://www.youtube.com/watch?v=5zFRZ3-DDd0"
+                target="_blank"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="Images/image6.png" />
+            <div class="overlay">
+              <a
+                href="https://www.youtube.com/watch?v=9HDEHj2yzew&ab_channel=DuaLipa"
+                target="_blank"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="Images/image7.png" />
+            <div class="overlay">
+              <a
+                href="https://www.youtube.com/watch?v=TfNUGoihWPA"
+                target="_blank"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+            </div>
+          </div>
         </div>
-        <div id="registerContainer">
-            <h2>Registro</h2>
-            <form id="registerForm">
-                <input type="text" id="registerUsername" placeholder="Nombre de usuario" required>
-                <input type="password" id="registerPassword" placeholder="Contraseña" required>
-                <button type="submit">Registrarse</button>
-            </form>
-        </div>
+      </div>
     </div>
 
-    <div id="mainContainer" style="display: none;">
-        <h1>Sistema de Gestión de Notas</h1>
-        <button id="logoutButton">Cerrar Sesión</button>
-        
-        <form id="studentForm">
-            <h2>Agregar Estudiante</h2>
-            <input type="text" id="studentName" placeholder="Nombre del estudiante" required>
-            <input type="text" id="studentId" placeholder="ID del estudiante" required>
-            <input type="text" id="subject" placeholder="Materia" required>
-            <select id="classroom" required>
-                <option value="">Seleccionar salón</option>
-                <option value="A">Salón A</option>
-                <option value="B">Salón B</option>
-                <option value="C">Salón C</option>
-            </select>
-            <button type="submit">Agregar Estudiante</button>
-        </form>
+    <div class="music-player">
+      <h1>Title</h1>
+      <p>Song Name</p>
 
-        <form id="gradeForm">
-            <h2>Agregar Nota</h2>
-            <input type="text" id="gradeStudentId" placeholder="ID del estudiante" required>
-            <input type="number" id="grade" placeholder="Nota" min="0" max="100" required>
-            <button type="submit">Agregar Nota</button>
-        </form>
+      <audio id="song">
+        <source src="song-list/Luke-Bergs-Gold.mp3" type="audio/mpeg" />
+      </audio>
 
-        <h2>Listado de Notas</h2>
-        <select id="classroomFilter">
-            <option value="">Todos los salones</option>
-            <option value="A">Salón A</option>
-            <option value="B">Salón B</option>
-            <option value="C">Salón C</option>
-        </select>
-        <table id="gradeTable">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>ID</th>
-                    <th>Salón</th>
-                    <th>Materia</th>
-                    <th>Nota</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+      <input type="range" value="0" id="progress" />
+
+      <div class="controls">
+        <button class="backward">
+          <i class="fa-solid fa-backward"></i>
+        </button>
+        <button class="play-pause-btn">
+          <i class="fa-solid fa-play" id="controlIcon"></i>
+        </button>
+        <button class="forward">
+          <i class="fa-solid fa-forward"></i>
+        </button>
+      </div>
     </div>
+  </body>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
+<script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'></script>
+<script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'></script><script  src="script.js"></script>
 
-    <script>
-        const API_URL = 'https://7rdprjnxt6.execute-api.us-west-2.amazonaws.com/dev';
-
-        // Función para registrar un usuario
-        async function register(username, password) {
-            try {
-                const response = await fetch(`${API_URL}/students/register`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ username, password }),
-                });
-                const data = await response.json();
-                if (response.ok) {
-                    alert('Usuario registrado con éxito');
-                } else {
-                    alert(data.message);
-                }
-            } catch (error) {
-                console.error('Error de registro:', error);
-                alert('Error al intentar registrarse');
-            }
-        }
-
-        // Función para iniciar sesión
-        async function login(username, password) {
-            try {
-                const response = await fetch(`${API_URL}/students/login`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ username, password }),
-                });
-                const data = await response.json();
-                if (response.ok) {
-                    document.getElementById('authContainer').style.display = 'none';
-                    document.getElementById('mainContainer').style.display = 'block';
-                    loadAndDisplayGrades();
-                } else {
-                    alert(data.message);
-                }
-            } catch (error) {
-                console.error('Error de inicio de sesión:', error);
-                alert('Error al intentar iniciar sesión');
-            }
-        }
-
-        // Manejar el formulario de registro
-        document.getElementById('registerForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const username = document.getElementById('registerUsername').value;
-            const password = document.getElementById('registerPassword').value;
-            await register(username, password);
-        });
-
-        // Manejar el formulario de inicio de sesión
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const username = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-            await login(username, password);
-        });
-
-        // Función para agregar un estudiante
-        async function addStudent(name, id, classroom) {
-            try {
-                const response = await fetch(`${API_URL}/students`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ studentId: id, name, classroom }),
-                });
-                const data = await response.json();
-                console.log('Respuesta del servidor:', data);
-                return data;
-            } catch (error) {
-                console.error('Error al agregar estudiante:', error);
-                throw error;
-            }
-        }
-
-        // Función para agregar una nota
-        async function addGrade(studentId, grade, subject, classroom) {
-            try {
-                const response = await fetch(`${API_URL}/students/grades`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ studentId, grade, subject, classroom }),
-                });
-                const data = await response.json();
-                console.log('Respuesta del servidor:', data);
-                return data;
-            } catch (error) {
-                console.error('Error al agregar nota:', error);
-                throw error;
-            }
-        }
-
-        async function getAllGrades(classroom = '') {
-            try {
-                let url = `${API_URL}/students/grades`;
-                if (classroom) {
-                    url += `?classroom=${classroom}`;
-                }
-                console.log('Fetching grades from:', url);
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                console.log('Datos obtenidos:', data);
-                return JSON.parse(data.body);
-            } catch (error) {
-                console.error('Error al obtener notas:', error);
-                throw error;
-            }
-        }
-
-        // Función para cerrar sesión
-        function logout() {
-            document.getElementById('mainContainer').style.display = 'none';
-            document.getElementById('authContainer').style.display = 'block';
-        }
-
-        // Manejar el formulario de agregar estudiante
-        document.getElementById('studentForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const name = document.getElementById('studentName').value;
-            const id = document.getElementById('studentId').value;
-            const classroom = document.getElementById('classroom').value;
-            try {
-                const result = await addStudent(name, id, classroom);
-                alert('Estudiante agregado con éxito');
-                loadAndDisplayGrades();
-            } catch (error) {
-                alert('Error al agregar estudiante');
-            }
-        });
-
-        // Manejar el formulario de agregar nota
-        document.getElementById('gradeForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const studentId = document.getElementById('gradeStudentId').value;
-            const grade = document.getElementById('grade').value;
-            const subject = document.getElementById('subject').value;
-            const classroom = document.getElementById('classroom').value;
-            try {
-                const result = await addGrade(studentId, parseInt(grade), subject, classroom);
-                alert('Nota agregada con éxito');
-                loadAndDisplayGrades();
-            } catch (error) {
-                alert('Error al agregar nota');
-            }
-        });
-
-        async function loadAndDisplayGrades(classroom = '') {
-            try {
-                const grades = await getAllGrades(classroom);
-                const tableBody = document.querySelector('#gradeTable tbody');
-                tableBody.innerHTML = ''; // Limpia la tabla antes de agregar nuevos datos
-
-                if (Array.isArray(grades) && grades.length > 0) {
-                    grades.forEach(student => {
-                        if (!classroom || student.classroom === classroom) {
-                            if (Array.isArray(student.grades) && student.grades.length > 0) {
-                                student.grades.forEach((gradeObj, index) => {
-                                    const row = tableBody.insertRow();
-                                    if (index === 0) {
-                                        row.insertCell(0).textContent = student.name || 'N/A';
-                                        row.insertCell(1).textContent = student.studentId || 'N/A';
-                                        row.insertCell(2).textContent = student.classroom || 'N/A';
-                                    } else {
-                                        row.insertCell(0).textContent = '';
-                                        row.insertCell(1).textContent = '';
-                                        row.insertCell(2).textContent = '';
-                                    }
-                                    row.insertCell(3).textContent = gradeObj.subject || 'N/A';
-                                    const gradeCell = row.insertCell(4);
-                                    gradeCell.contentEditable = true;
-                                    gradeCell.textContent = gradeObj.grade || 'N/A';
-                                   
-                                    const deleteCell = row.insertCell(5);
-                                    const deleteButton = document.createElement('button');
-                                    deleteButton.textContent = 'Eliminar';
-                                    deleteButton.onclick = () => deleteStudent(student.studentId, student.classroom);
-                                    deleteCell.appendChild(deleteButton);
-                                });
-                            } else {
-                                const row = tableBody.insertRow();
-                                row.insertCell(0).textContent = student.name || 'N/A';
-                                row.insertCell(1).textContent = student.studentId || 'N/A';
-                                row.insertCell(2).textContent = student.classroom || 'N/A';
-                                row.insertCell(3).textContent = 'N/A';
-                                row.insertCell(4).textContent = 'N/A';
-                                row.insertCell(5).textContent = 'N/A';
-                                const deleteCell = row.insertCell(5);
-                                const deleteButton = document.createElement('button');
-                                deleteButton.textContent = 'Eliminar';
-                                deleteButton.onclick = () => deleteStudent(student.studentId, student.classroom);
-                                deleteCell.appendChild(deleteButton);
-                            }
-                        }
-                    });
-                } else {
-                    const row = tableBody.insertRow();
-                    row.insertCell(0).colSpan = 6;
-                    row.textContent = 'No se encontraron datos';
-                }
-            } catch (error) {
-                console.error('Error al cargar datos:', error);
-                alert(`Error al cargar datos: ${error.message}`);
-                const tableBody = document.querySelector('#gradeTable tbody');
-                tableBody.innerHTML = '<tr><td colspan="7">Error al cargar datos. Por favor, intenta de nuevo más tarde.</td></tr>';
-            }
-        }
-// Funcion Para eliminar un estudiante 
-        async function deleteStudent(studentId, classroom) {
-            if (confirm('¿Está seguro de que desea eliminar este estudiante?')) {
-                try {
-                    const response = await fetch(`${API_URL}/students/grades`, {
-                        method: 'DELETE',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ studentId, classroom }),
-                    });
-                    if (!response.ok) {
-                        throw new Error('Error al eliminar el estudiante');
-                    }
-                    alert('Estudiante eliminado con éxito');
-                    loadAndDisplayGrades();
-                } catch (error) {
-
-                    console.error('Error al eliminar estudiante:', error);
-                alert('Error al eliminar el estudiante');
-            }
-        }
-    }
-
-    // Manejar el filtro de salón
-    document.getElementById('classroomFilter').addEventListener('change', (e) => {
-        const selectedClassroom = e.target.value;
-        loadAndDisplayGrades(selectedClassroom);
-    });
-
-    // Manejar el botón de cerrar sesión
-    document.getElementById('logoutButton').addEventListener('click', logout);
-
-</script>
 </body>
 </html>
