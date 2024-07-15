@@ -1,16 +1,8 @@
 version: 0.0
 os: windows
 files:
-  - source: index.html
+  - source: /
     destination: c:\inetpub\wwwroot
-  - source: script.js
-    destination: c:\inetpub\wwwroot
-  - source: style.css
-    destination: c:\inetpub\wwwroot
-  - source: Images
-    destination: c:\inetpub\wwwroot\Images
-  - source: Songs
-    destination: c:\inetpub\wwwroot\Songs
 hooks:
   BeforeInstall:
     - location: scripts/before_install.bat
@@ -18,3 +10,5 @@ hooks:
   AfterInstall:
     - location: scripts/after_install.bat
       timeout: 900
+    - location: scripts/configure_iis.ps1
+      timeout: 300
