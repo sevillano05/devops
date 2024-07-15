@@ -3,12 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing dependencies...
-      - npm install
+      - echo No dependencies to install
   build:
     commands:
-      - echo Build started on `date`
-      - npm run build
+      - echo Build phase not required for a simple static site
   post_build:
     commands:
       - echo Build completed on `date`
