@@ -4,10 +4,7 @@ phases:
   build:
     commands:
       - echo "Running updateSongInfo function"
-      - echo "<html><head><script src='script.js'></script></head><body><script>function updateSongInfo() {
-          console.log('Function updateSongInfo() executed successfully');
-        }
-        updateSongInfo();</script></body></html>" > index.html
+      - grep "script.js" > index.html
 
 artifacts:
   files:
