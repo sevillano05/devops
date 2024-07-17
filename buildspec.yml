@@ -4,9 +4,11 @@ phases:
   build:
     commands:
       - echo "Running updateSongInfo function"
-      - grep -Fq "script.js" > index.html
+      - grep "script.js" index.html
 
 artifacts:
-  - "**/*""
+  files:
+    - index.html   # Incluye el archivo index.html generado en el artefacto
+  discard-paths: yes
 
 
